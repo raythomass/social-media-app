@@ -10,6 +10,13 @@ const {
 
 const router = express.Router()
 
+router.use(
+    cors({
+        credentials: true,
+        origin: 'http://localhost:3000'
+    })
+);
+
 //Get all posts
 router.get('/', getPosts)
 
