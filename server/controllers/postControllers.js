@@ -31,10 +31,10 @@ const getSinglePost = async (req, res) => {
 }
 
 const createPost = async (req, res) => {
-    const { title, content } = req.body
+    const { post_title, post_content } = req.body
 
     try {
-        const post = await Post.create({ title, content })
+        const post = await Post.create({ post_title, post_content })
         res.status(200).json(post)
     } catch (error) {
         res.status(400).json({error: error.message})

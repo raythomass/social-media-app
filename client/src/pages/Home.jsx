@@ -1,17 +1,16 @@
 import { useState, useEffect } from "react"
+import PostDetails from "../components/PostDetails"
 
 export default function Home() {
-  const [ posts, setPosts] = useState('')
+  const [ posts, setPosts] = useState(null)
 
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await fetch('http://localhost:3001/api/posts')
-      console.log(response)
-
       const json = await response.json()
       console.log(json)
 
-      if(response) {
+      if(response.ok) {
         setPosts(json)
       }
     }
@@ -21,12 +20,11 @@ export default function Home() {
 
   return (
     <div className="home">
-      {posts && posts.map((post) => (
-        <>
-        <p>{post.title}</p>
-        <p>{post.content}</p>
-        </>
+      <div>
+        {posts && posts.map((post) => (
+          <PostDetails key={post._id} post={post} />
       ))}
+      </div>
     </div>
   )
 }
