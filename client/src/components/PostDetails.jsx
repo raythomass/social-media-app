@@ -1,16 +1,15 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
+import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
-export default function PostDetails() {
+const PostDetails = ({ post }) => {
 
   return (
-    <div className='post-details'>
-        <h3>Post Title</h3>
-        <p>@username</p>
-        <p>khascioascbaiscbiabscibuasjncnoasbjcjabkbscbkjac</p>
-        <p>post time</p>
+    <div className="post-details">
+      <p className='post-title'>{post.post_title}</p>
+      <p className='post-username'>@username</p>
+      <p className='post-content'>{post.post_content}</p>
+      <p className='post-date'>{formatDistanceToNow(new Date(post.createdAt), { addSuffix: true})}</p>
     </div>
-
-    
   )
 }
+
+export default PostDetails

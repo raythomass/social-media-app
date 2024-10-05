@@ -1,3 +1,37 @@
 #root {
   margin: 0 auto;
+  max-width: 1440px;
+  font-family: Inter;
+}
+
+.post-details {
+  margin-top: 2rem;
+  border: solid 0.5px rgb(201, 201, 201);
+  border-radius: 5px;
+  padding: 1rem;
+  width: 50%;
+}
+
+.post-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.post-username{
+  font-size: 12px;
+  color: rgb(148, 148, 148);
+  margin: 0;
+}
+
+.post-content {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.post-date {
+  font-size: 12px;
+  color: rgb(148, 148, 148);
+  margin: 0;
 }

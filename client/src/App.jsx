@@ -1,6 +1,5 @@
 import './App.css'
 import Navbar from './components/Navbar'
-import PostDetails from './components/PostDetails'
 import Home from './pages/Home'
 
 function App() {
@@ -9,8 +8,6 @@ function App() {
     <>
       <Navbar/>
       <Home/>
-      <br></br>
-      <PostDetails/>
     </>
   )
 }
