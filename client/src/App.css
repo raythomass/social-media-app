@@ -4,6 +4,12 @@
   font-family: Inter;
 }
 
+.nav {
+  display: flex;
+  justify-content: space-between;
+  place-items: center;
+}
+
 .post-details {
   margin-top: 2rem;
   border: solid 0.5px rgb(201, 201, 201);
@@ -34,4 +40,20 @@
   font-size: 12px;
   color: rgb(148, 148, 148);
   margin: 0;
+}
+
+.login-form {
+  margin-left: 25%;
+  margin-right: 25%;
+  align-items: center;
+}
+
+.login-form div {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.login-form button {
+  margin-top: 10px;
 }
