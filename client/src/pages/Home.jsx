@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import PostDetails from "../components/PostDetails"
+import PostForm from "../components/PostForm"
 
 export default function Home() {
   const [ posts, setPosts] = useState(null)
@@ -20,7 +21,10 @@ export default function Home() {
 
   return (
     <div className="home">
-      <div>
+      <div className="post-form-container">
+        <PostForm/>
+      </div>
+      <div className="post-details-container">
         {posts && posts.map((post) => (
           <PostDetails key={post._id} post={post} />
       ))}

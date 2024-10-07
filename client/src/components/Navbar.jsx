@@ -8,11 +8,14 @@ export default function Navbar() {
             <h1>Social Media App</h1>
           </Link>
           
-          <nav>
-            <Link to={'/login'}>
-              <p>Login</p>
+          <div className="nav-links">
+            <Link className="nav-link-container" to={'/login'}>
+              <p className="login-link">Login</p>
             </Link>
-          </nav>
+            <Link className="nav-link-container" to={'/signup'}>
+              <p className="signup-link">Signup</p>
+            </Link>
+          </div>
         </div>
     </header>
   )
