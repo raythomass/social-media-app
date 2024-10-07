@@ -1,7 +1,10 @@
 import { useState } from "react"
 import {toast} from 'react-hot-toast'
+import { usePostContext } from "../hooks/usePostContext"
 
 export default function PostForm() {
+    const {dispatch} = usePostContext()
+
     const [post_title, setTitle] = useState('')
     const [post_content, setContent] = useState('')
     const [error, setError] = useState(null)
@@ -35,6 +38,7 @@ export default function PostForm() {
             setContent('')
             setError(null)
             console.log('New Post Added', json)
+            dispatch({type: 'CREATE_POST', payload: json})
         }
     }
 
