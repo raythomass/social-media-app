@@ -4,18 +4,55 @@
   font-family: Inter;
 }
 
+.home {
+  display: flex;
+  gap: 10%;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
   place-items: center;
 }
 
+.post-form-container {
+  width: 40%;
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.post-form-title {
+  padding-top: 5px ;
+  padding-bottom: 5px ;
+  padding-left: 10px;
+  text-align: start;
+  border: solid 0.5px rgb(201, 201, 201);
+  border-radius: 5px;
+}
+
+.post-form-content {
+  padding-top: 5px ;
+  padding-bottom: 50px ;
+  padding-left: 10px;
+  border: solid 0.5px rgb(201, 201, 201);
+  border-radius: 5px;
+}
+
+.post-details-container {
+  width: 100%;
+}
+
 .post-details {
-  margin-top: 2rem;
+  margin-bottom: 2rem;
   border: solid 0.5px rgb(201, 201, 201);
   border-radius: 5px;
   padding: 1rem;
-  width: 50%;
+  width: 70%;
 }
 
 .post-title {
@@ -48,6 +85,37 @@
   align-items: center;
 }
 
+.nav-links {
+  display: flex;
+  gap: 35px;
+}
+
+.nav-link-container {
+  text-decoration: none;
+  color: black;
+  place-items: center;
+}
+
+.login-link {
+  border: solid 1px black;
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+
+.login-link:hover {
+  padding: 0.6rem;
+}
+
+.signup-link {
+  border: solid 1px black;
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+
+.signup-link:hover {
+  padding: 0.6rem;
+}
+
 .login-form div {
   display: flex;
   flex-direction: column;
@@ -55,5 +123,21 @@
 }
 
 .login-form button {
+  margin-top: 10px;
+}
+
+.signup-form {
+  margin-left: 25%;
+  margin-right: 25%;
+  align-items: center;
+}
+
+.signup-form div {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.signup-form button {
   margin-top: 10px;
 }
