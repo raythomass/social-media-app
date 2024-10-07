@@ -1,5 +1,6 @@
 import './App.css'
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
+import {Toaster} from 'react-hot-toast'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Login from './pages/Login'
@@ -12,6 +13,7 @@ function App() {
       <BrowserRouter>
         <Navbar/>
         <div className='pages'>
+          <Toaster position='top-right' toastOptions={{duration: 2000}}/>
           <Routes>
             <Route
               path='/'

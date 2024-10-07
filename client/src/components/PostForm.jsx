@@ -1,4 +1,5 @@
 import { useState } from "react"
+import {toast} from 'react-hot-toast'
 
 export default function PostForm() {
     const [post_title, setTitle] = useState('')
@@ -25,9 +26,11 @@ export default function PostForm() {
         if(!response.ok) {
             setError(json.error)
             setEmptyFields(json.emptyFields)
+            toast.error(json.error)
         }
 
         if(response.ok) {
+            toast.success('New Post Added')
             setTitle('')
             setContent('')
             setError(null)
