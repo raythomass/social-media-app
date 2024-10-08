@@ -16,7 +16,7 @@ export default function PostForm() {
         e.preventDefault()
 
         if(!user) {
-            setError('You must be loggeed in')
+            setError('You must be logged in')
             return
         }
 
@@ -67,6 +67,7 @@ export default function PostForm() {
             className="post-form-content"
         />
         <button>Add Post</button>
+        {error ?? <div className='error'>{error}</div>}
     </form>
   )
 }

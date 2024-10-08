@@ -2,8 +2,9 @@ const Post = require('../models/postModel')
 const mongoose = require('mongoose')
 
 const getPosts = async (req, res) => {
+    const user_id = req.user._id
     try {
-        const post = await Post.find().sort({createdAt: -1})
+        const post = await Post.find({ user_id }).sort({createdAt: -1})
         res.status(200).json(post)
     } catch (error) {
         res.status(400).json({error: error.message})
@@ -34,7 +35,8 @@ const createPost = async (req, res) => {
     const { post_title, post_content } = req.body
 
     try {
-        const post = await Post.create({ post_title, post_content })
+        const user_id = req.user._id
+        const post = await Post.create({ post_title, post_content, user_id })
         res.status(200).json(post)
     } catch (error) {
         res.status(400).json({error: error.message})
