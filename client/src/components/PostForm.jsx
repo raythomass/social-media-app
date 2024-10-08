@@ -1,9 +1,11 @@
 import { useState } from "react"
 import {toast} from 'react-hot-toast'
 import { usePostContext } from "../hooks/usePostContext"
+import { useAuthContext } from "../hooks/useAuthContext"
 
 export default function PostForm() {
     const {dispatch} = usePostContext()
+    const { user } = useAuthContext()
 
     const [post_title, setTitle] = useState('')
     const [post_content, setContent] = useState('')
@@ -13,13 +15,19 @@ export default function PostForm() {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
+        if(!user) {
+            setError('You must be loggeed in')
+            return
+        }
+
         const post = {post_title, post_content}
 
         const response = await fetch('http://localhost:3001/api/posts', {
             method: 'POST',
             body: JSON.stringify(post),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.token}`
             }
         })
 

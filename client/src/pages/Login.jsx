@@ -1,15 +1,18 @@
 import { useState } from "react"
 import { useLogin } from "../hooks/useLogin"
+import {toast} from 'react-hot-toast'
 
 export default function Login() {
-    const [email, setEmail] = useState('')
+    const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const { login, isLoading, error} = useLogin()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        await login(email, password)
+        await login(username, password)
+        toast.success('Login Succesful')
+        
     }
 
   return (
@@ -19,11 +22,11 @@ export default function Login() {
         </div>
 
         <div>
-            <label>Email: </label>
+            <label>Username: </label>
             <input 
-                type="email"
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
+                type="text"
+                onChange={(e) => setUsername(e.target.value)}
+                value={username}
             />
         </div>
         <div>

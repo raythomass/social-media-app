@@ -6,7 +6,7 @@ export const useLogout = () => {
     const { dispatch: postDispatch } = usePostContext()
 
     const logout = async () => {
-        localStorage.getItem('user')
+        localStorage.removeItem('user')
 
         dispatch({type: 'LOGOUT'})
         postDispatch({type: 'SET_POSTS', payload: null})

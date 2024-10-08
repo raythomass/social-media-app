@@ -48,12 +48,12 @@ userSchema.statics.signup = async function (name, username, email, password) {
 
 
 
-userSchema.statics.login = async function(email, password) {
-    if(!email || !password) {
+userSchema.statics.login = async function(username, password) {
+    if(!username || !password) {
         throw Error('All fields must be entered')
     }
 
-    const user = await this.findOne({email})
+    const user = await this.findOne({username})
 
     if(!user) {
         throw Error('Incorrect Email')

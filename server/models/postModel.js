@@ -10,7 +10,7 @@ const postSchema = new Schema({
     post_content: {
         type: String,
         required: true
-    }
+    },
 }, { timestamps: true })
 
 module.exports = mongoose.model('Post', postSchema);
