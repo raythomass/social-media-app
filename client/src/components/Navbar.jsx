@@ -21,7 +21,7 @@ export default function Navbar() {
           <div className="nav-links">
             {user && (
               <div>
-                <span>Hello {user.name}</span>
+                <span>Hello {user.username}</span>
                 <button onClick={handleClick}>Logout</button>
             </div>
             )}
